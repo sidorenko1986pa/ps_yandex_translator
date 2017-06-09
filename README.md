@@ -1,15 +1,13 @@
 # YandexTranslator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/yandex_translator`. To experiment with that code, run `bin/console` for an interactive prompt.
+Яндекс переводчик
 
-TODO: Delete this and the text above, and describe your gem
+## Установка
 
-## Installation
-
-Add this line to your application's Gemfile:
+Добавьте эту строку в Gemfile вашего приложения:
 
 ```ruby
-gem 'yandex_translator'
+gem install yandex_translator
 ```
 
 And then execute:
