@@ -34,7 +34,7 @@ YandexTranslator::Api.conf do |params|
 end
 ```
 
-## Работа
+# Работа
 
 ## key
 Получить api key установленный в файле конфигурации
