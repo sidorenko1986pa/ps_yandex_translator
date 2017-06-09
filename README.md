@@ -7,7 +7,7 @@
 Добавьте эту строку в Gemfile вашего приложения:
 
 ```ruby
-gem install yandex_translator
+gem 'yandex_translator', github: 'sidorenko1986pa/yandex_translator'
 ```
 
 А затем выполните:
@@ -16,7 +16,7 @@ gem install yandex_translator
 
 Или установите его самостоятельно как:
 
-    $ gem install yandex_translator
+    $ gem install 'yandex_translator', github: 'sidorenko1986pa/yandex_translator'
 
 Сгенерируйте файл конфига
 
@@ -28,34 +28,48 @@ gem install yandex_translator
 
 ## Конфигурация
 
+```sh
 YandexTranslator::Api.conf do |params|
-  params.api_key = "" # yandex translator api key
+ params.api_key = "" # yandex translator api key
 end
+```
 
 ## Работа
 
 ## key
 Получить api key установленный в файле конфигурации
-YandexTranslator::Api.key
+
+```sh
+$ YandexTranslator::Api.key
+```
 
 ## languages
 Получить доступные языки для перевода
+
+```sh
 YandexTranslator::Api.languages
+```
 
 ## define_language
 Определить язык
+```sh
 YandexTranslator::Api.define_language(text: 'привет')
+```
 
 ## translate
 Перевод текста
+
+```sh
 YandexTranslator::Api.translate(text: 'всем привет', lang: :fr)
-Если параметр lang не указан, то по умолчанию переводиться на английский язык
+```
+
+> Если параметр lang не указан, то по умолчанию переводиться на английский язык
 
 ## Содействие
 
 Отчеты об ошибках и запросы на улучшения гема приветствуются на GitHub в https://github.com/sidorenko1986pa/yandex_translator
 
-## License
+## Лиценщия
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+Гем доступен как открытый источник в соответствии с условиями [MIT License](http://opensource.org/licenses/MIT).
 
