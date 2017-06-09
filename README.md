@@ -69,7 +69,7 @@ YandexTranslator::Api.translate(text: 'всем привет', lang: :fr)
 
 Отчеты об ошибках и запросы на улучшения гема приветствуются на GitHub в https://github.com/sidorenko1986pa/yandex_translator
 
-## Лиценщия
+## Лицензия
 
 Гем доступен как открытый источник в соответствии с условиями [MIT License](http://opensource.org/licenses/MIT).
 
