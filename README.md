@@ -1,41 +1,75 @@
 # YandexTranslator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/yandex_translator`. To experiment with that code, run `bin/console` for an interactive prompt.
+Яндекс переводчик
 
-TODO: Delete this and the text above, and describe your gem
+## Установка
 
-## Installation
-
-Add this line to your application's Gemfile:
+Добавьте эту строку в Gemfile вашего приложения:
 
 ```ruby
-gem 'yandex_translator'
+gem 'yandex_translator', github: 'sidorenko1986pa/yandex_translator'
 ```
 
-And then execute:
+А затем выполните:
 
     $ bundle
 
-Or install it yourself as:
+Или установите его самостоятельно как:
 
-    $ gem install yandex_translator
+    $ gem install 'yandex_translator', github: 'sidorenko1986pa/yandex_translator'
 
-## Usage
+Сгенерируйте файл конфига
 
-TODO: Write usage instructions here
+    $ rails generate yandex_translator:install
+    
+## Примечание
 
-## Development
+Получите api_key из https://tech.yandex.ru/keys/get/?service=trnsl.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Конфигурация
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```sh
+YandexTranslator::Api.conf do |params|
+ params.api_key = "" # yandex translator api key
+end
+```
 
-## Contributing
+# Работа
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/FoX/yandex_translator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+## key
+Получить api key установленный в файле конфигурации
 
+```sh
+$ YandexTranslator::Api.key
+```
 
-## License
+## languages
+Получить доступные языки для перевода
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+```sh
+YandexTranslator::Api.languages
+```
+
+## define_language
+Определить язык
+```sh
+YandexTranslator::Api.define_language(text: 'привет')
+```
+
+## translate
+Перевод текста
+
+```sh
+YandexTranslator::Api.translate(text: 'всем привет', lang: :fr)
+```
+
+> Если параметр lang не указан, то по умолчанию переводиться на английский язык
+
+## Содействие
+
+Отчеты об ошибках и запросы на улучшения гема приветствуются на GitHub в https://github.com/sidorenko1986pa/yandex_translator
+
+## Лицензия
+
+Гем доступен как открытый источник в соответствии с условиями [MIT License](http://opensource.org/licenses/MIT).
 
