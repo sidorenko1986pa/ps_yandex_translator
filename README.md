@@ -50,14 +50,14 @@ end
 # Работа
 
 ## key
-Получить api key установленный в файле конфигурации
+Получить api key
 
 ```rb
 YandexTranslator::Api.key
 ```
 
 ## default_lang
-Получить язык по умолчанию установленный в файле конфигурации
+Получить язык по умолчанию
 
 ```rb
 YandexTranslator::Api.default_lang
