@@ -24,23 +24,23 @@ rails
 
 Сгенерируйте файл конфига
 
-    $ rails generate yandex_translator:install
+```rb
+$ rails generate yandex_translator:install
 
-    ```sh
-    YandexTranslator::Api.conf do |params|
-        params.api_key = "" # yandex translator api key
-        params.default_lang = "" # yandex translator default lang
-    end
-    ```
+YandexTranslator::Api.conf do |params|
+    params.api_key = "" # yandex translator api key
+    params.default_lang = "" # yandex translator default lang
+end
+```
 ruby
 
-    ```sh
-    require 'yandex_translator/yandex_translator'
+```rb
+require 'yandex_translator/yandex_translator'
 
-    YandexTranslator::Api.conf do |params|
-        params.api_key = "" # yandex translator api key
-        params.default_lang = "" # yandex translator default lang
-    end
+YandexTranslator::Api.conf do |params|
+    params.api_key = "" # yandex translator api key
+    params.default_lang = "" # yandex translator default lang
+end
     ```
     
 ## Примечание
@@ -52,37 +52,37 @@ ruby
 ## key
 Получить api key установленный в файле конфигурации
 
-    ```sh
-    YandexTranslator::Api.key
-    ```
+```rb
+YandexTranslator::Api.key
+```
 
 ## default_lang
 Получить язык по умолчанию установленный в файле конфигурации
 
-    ```sh
-    YandexTranslator::Api.default_lang
-    ```
+```rb
+YandexTranslator::Api.default_lang
+```
 
 ## languages
 Получить доступные языки для перевода
 
-    ```sh
-    YandexTranslator::Api.languages
-    ```
+```rb
+YandexTranslator::Api.languages
+```
 
 ## define_language
 Определить язык
 
-    ```sh
-    YandexTranslator::Api.define_language(text: 'привет')
-    ```
+```rb
+YandexTranslator::Api.define_language(text: 'привет')
+```
 
 ## translate
 Перевод текста
 
-    ```sh
-    YandexTranslator::Api.translate(text: 'всем привет', lang: :fr)
-    ```
+```rb
+YandexTranslator::Api.translate(text: 'всем привет', lang: :fr)
+```
 
 > Если параметр lang не указан, то по умолчанию переводиться на английский язык
 
