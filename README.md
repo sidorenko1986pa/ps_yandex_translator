@@ -41,7 +41,7 @@ YandexTranslator::Api.conf do |params|
     params.api_key = "" # yandex translator api key
     params.default_lang = "" # yandex translator default lang
 end
-    ```
+```
     
 ## Примечание
 
