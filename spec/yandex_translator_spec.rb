@@ -1,12 +1,14 @@
 require "spec_helper"
 
 API_KEY = "trnsl.1.1.20170607T193617Z.478755f97626702e.e47a80b271bc5f68e91383b66f84b0561afcf8e1"
+DEFAULT_LANG = :en
 
 RSpec.describe YandexTranslator do
 
   before :each do
     YandexTranslator::Api.conf do |params|
-      params.api_key = "trnsl.1.1.20170607T193617Z.478755f97626702e.e47a80b271bc5f68e91383b66f84b0561afcf8e1"
+      params.api_key = API_KEY
+      params.default_lang = DEFAULT_LANG
     end
   end
 
@@ -16,7 +18,12 @@ RSpec.describe YandexTranslator do
 
   it "get key" do
     key = YandexTranslator::Api.key
-    expect(key).to eq("trnsl.1.1.20170607T193617Z.478755f97626702e.e47a80b271bc5f68e91383b66f84b0561afcf8e1")
+    expect(key).to eq(API_KEY)
+  end
+
+  it "get default lang" do
+    key = YandexTranslator::Api.default_lang
+    expect(key).to eq(:en)
   end
 
   it "list of supported languages" do
