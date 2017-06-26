@@ -7,7 +7,7 @@
 Добавьте эту строку в Gemfile вашего приложения:
 
 ```ruby
-gem 'yandex_translator', github: 'sidorenko1986pa/yandex_translator'
+gem 'ps_yandex_translator', '~> 0.1.3'
 ```
 
 А затем выполните:
@@ -16,7 +16,7 @@ gem 'yandex_translator', github: 'sidorenko1986pa/yandex_translator'
 
 Или установите его самостоятельно как:
 
-    $ gem install 'yandex_translator'
+    $ gem install ps_yandex_translator
 
 ## Конфигурация
 
