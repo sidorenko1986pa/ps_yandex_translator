@@ -16,50 +16,71 @@ gem 'yandex_translator', github: 'sidorenko1986pa/yandex_translator'
 
 Или установите его самостоятельно как:
 
-    $ gem install 'yandex_translator', github: 'sidorenko1986pa/yandex_translator'
+    $ gem install 'yandex_translator'
+
+## Конфигурация
+
+rails
 
 Сгенерируйте файл конфига
 
-    $ rails generate yandex_translator:install
+```rb
+$ rails generate yandex_translator:install
+
+YandexTranslator::Api.conf do |params|
+    params.api_key = "" # yandex translator api key
+    params.default_lang = "" # yandex translator default lang
+end
+```
+ruby
+
+```rb
+require 'yandex_translator/yandex_translator'
+
+YandexTranslator::Api.conf do |params|
+    params.api_key = "" # yandex translator api key
+    params.default_lang = "" # yandex translator default lang
+end
+```
     
 ## Примечание
 
 Получите api_key из https://tech.yandex.ru/keys/get/?service=trnsl.
 
-## Конфигурация
-
-```sh
-YandexTranslator::Api.conf do |params|
- params.api_key = "" # yandex translator api key
-end
-```
-
 # Работа
 
 ## key
-Получить api key установленный в файле конфигурации
+Получить api key
 
-```sh
-$ YandexTranslator::Api.key
+```rb
+YandexTranslator::Api.key
+```
+
+## default_lang
+Получить язык по умолчанию
+
+```rb
+YandexTranslator::Api.default_lang
 ```
 
 ## languages
 Получить доступные языки для перевода
 
-```sh
+```rb
 YandexTranslator::Api.languages
 ```
 
 ## define_language
 Определить язык
-```sh
+
+```rb
 YandexTranslator::Api.define_language(text: 'привет')
 ```
 
 ## translate
 Перевод текста
 
-```sh
+```rb
 YandexTranslator::Api.translate(text: 'всем привет', lang: :fr)
 ```
 
