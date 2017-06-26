@@ -1,4 +1,4 @@
-class Error < StandardError
+class ApiYandexTranslatorError < StandardError
 
   def initialize(msg="error api")
     super

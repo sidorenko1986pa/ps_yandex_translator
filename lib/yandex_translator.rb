@@ -1,5 +1,5 @@
 require "yandex_translator/version"
-require "yandex_translator/connect"
+require "yandex_translator/api_yandex_translator_connect"
 
 module YandexTranslator
 
@@ -16,10 +16,15 @@ module YandexTranslator
       yield(@yandex_translator ||= YandexTranslator::Api.new)
       @api_key = @yandex_translator.api_key
       @default_lang = @yandex_translator.default_lang || DEFAULT_LANG
+      @connect = ApiYandexTranslatorConnect.new(api_key: @api_key)
     end
 
     def self.check_text(text)
       text || ''
+    end
+
+    def self.check_lang(lang)
+      lang || @default_lang
     end
 
     def self.key
@@ -34,23 +39,23 @@ module YandexTranslator
       request_params = {
         text: check_text(params[:text])
       }
-      Connect.post(request_params, METHOD_DETECT, 'lang')
+      @connect.post(request_params, METHOD_DETECT, 'lang')
     end
 
     def self.translate(params = {})
       request_params = {
-        lang: params[:lang] || @default_lang,
+        lang: check_lang(params[:lang]),
         text: check_text(params[:text]),
         options: 1
       }
-      Connect.post(request_params, METHOD_TRASLATE, 'text')
+      @connect.post(request_params, METHOD_TRASLATE, 'text')
     end
 
     def self.languages(params = {})
       request_params = {
-        ui: params[:lang] || @default_lang
+        ui: check_lang(params[:lang])
       }
-      Connect.post(request_params, METHOD_GET_LANGS, 'langs')
+      @connect.post(request_params, METHOD_GET_LANGS, 'langs')
     end
 
   end
