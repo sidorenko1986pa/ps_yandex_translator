@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'yandex_translator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ps_yandex_translator"
+  spec.name          = "yandex_translator"
   spec.version       = YandexTranslator::VERSION
   spec.authors       = ["FoX"]
   spec.email         = ["p.sidorenko@leko.in"]
