@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "yandex_translator"
+require "ps_yandex_translator"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

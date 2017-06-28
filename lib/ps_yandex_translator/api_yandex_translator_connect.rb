@@ -1,7 +1,7 @@
 require "json"
 require "net/http"
 require "faraday"
-require "yandex_translator/api_yandex_translator_error"
+require "ps_yandex_translator/api_yandex_translator_error"
 
 class ApiYandexTranslatorConnect
 

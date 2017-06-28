@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'yandex_translator/version'
+require 'ps_yandex_translator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "yandex_translator"
+  spec.name          = "ps_yandex_translator"
   spec.version       = YandexTranslator::VERSION
   spec.authors       = ["FoX"]
   spec.email         = ["p.sidorenko@leko.in"]
 
   spec.summary       = 'api yandex translator'
   spec.description   = 'yandex translator'
-  spec.homepage      = 'https://github.com/sidorenko1986pa/yandex_translator'
+  spec.homepage      = 'https://github.com/sidorenko1986pa/ps_yandex_translator'
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

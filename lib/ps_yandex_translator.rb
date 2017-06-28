@@ -1,5 +1,5 @@
-require "yandex_translator/version"
-require "yandex_translator/api_yandex_translator_connect"
+require "ps_yandex_translator/version"
+require "ps_yandex_translator/api_yandex_translator_connect"
 
 module YandexTranslator
 
