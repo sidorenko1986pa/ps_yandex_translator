@@ -22,7 +22,7 @@ class ApiYandexTranslatorConnect
     if response["code"].nil? || response["code"] == 200
       response[response_key].kind_of?(Array) ? response[response_key].join("\n") : response[response_key]
     else
-      raise ApiYandexTranslatorError, code: response["code"], message: response["message"]
+      raise ApiYandexTranslatorError, {code: response["code"], message: response["message"]}.to_json
     end
 
   end
