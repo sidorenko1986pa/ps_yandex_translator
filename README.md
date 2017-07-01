@@ -7,7 +7,7 @@
 Добавьте эту строку в Gemfile вашего приложения:
 
 ```ruby
-gem 'ps_yandex_translator', '~> 0.1.3'
+gem 'ps_yandex_translator', '~> 0.1.7'
 ```
 
 А затем выполните:
